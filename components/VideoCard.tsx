@@ -10,7 +10,7 @@ interface VideoCardProps {
 const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Simple helper to get YouTube ID from URL
+  // Helper to extract ID regardless of whether the source is already an embed or a standard link
   const getYouTubeId = (url: string) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
@@ -20,6 +20,9 @@ const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
   const videoId = getYouTubeId(item.youtubeUrl);
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
+  // Standard high-compatibility embed URL construction
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1`;
+
   return (
     <div className="group relative bg-[#111] border border-white/5 overflow-hidden transition-all duration-500 hover:border-purple-500/50 rounded-lg">
       {/* Thumbnail / Hover State */}
@@ -28,6 +31,9 @@ const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
           src={thumbnailUrl} 
           alt={item.title} 
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-60 group-hover:opacity-100"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+          }}
         />
         
         {/* Overlay */}
@@ -45,7 +51,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
 
         {/* Category Badge */}
         <div className="absolute top-4 left-4">
-          <span className="text-[10px] font-bold tracking-widest uppercase bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-purple-400 border border-purple-500/20">
+          <span className="text-[9px] font-bold tracking-widest uppercase bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-purple-400 border border-purple-500/20">
             {item.category}
           </span>
         </div>
@@ -57,7 +63,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
           <h3 className="text-xl font-heading font-bold text-white group-hover:text-purple-400 transition-colors">
             {item.title}
           </h3>
-          <div className="flex items-center space-x-1 text-gray-500 text-xs">
+          <div className="flex items-center space-x-1 text-gray-500 text-xs shrink-0 ml-2">
             <Eye size={14} />
             <span>{item.viewCount}</span>
           </div>
@@ -72,20 +78,26 @@ const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 p-4 md:p-10">
           <button 
             onClick={() => setIsPlaying(false)}
-            className="absolute top-6 right-6 text-white hover:text-purple-500 transition-colors"
+            className="absolute top-6 right-6 text-white hover:text-purple-500 transition-colors z-10"
           >
             <X size={40} />
           </button>
           <div className="w-full max-w-6xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-white/10">
-            <iframe
-              width="100%"
-              height="100%"
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-              title={item.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            {videoId ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={embedUrl}
+                title={item.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-500 uppercase tracking-widest">
+                Video Unavailable
+              </div>
+            )}
           </div>
         </div>
       )}

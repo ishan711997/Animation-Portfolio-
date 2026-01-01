@@ -1,5 +1,13 @@
 
-export type Category = 'Explainer' | 'Social Media' | 'Corporate' | 'UI Animation' | 'All';
+export type Category = 
+  | 'Explainer' 
+  | 'Social Media' 
+  | 'Corporate' 
+  | 'UI Animation' 
+  | '3D Product Showcase' 
+  | 'Technical Explainer Motion Graphics' 
+  | 'Math Explainer'
+  | 'All';
 
 export interface PortfolioItem {
   id: string;

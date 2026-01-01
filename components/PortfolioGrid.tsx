@@ -7,7 +7,16 @@ import VideoCard from './VideoCard';
 const PortfolioGrid: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<Category>('All');
 
-  const categories: Category[] = ['All', 'Explainer', 'Social Media', 'Corporate', 'UI Animation'];
+  const categories: Category[] = [
+    'All', 
+    '3D Product Showcase', 
+    'Technical Explainer Motion Graphics',
+    'Math Explainer',
+    'Explainer', 
+    'Social Media', 
+    'Corporate', 
+    'UI Animation'
+  ];
 
   const filteredItems = activeFilter === 'All' 
     ? PORTFOLIO_ITEMS 
@@ -28,7 +37,7 @@ const PortfolioGrid: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-full border ${
+                className={`px-5 py-2 text-[10px] font-bold uppercase tracking-widest transition-all duration-300 rounded-full border ${
                   activeFilter === cat 
                     ? 'bg-purple-600 border-purple-600 text-white' 
                     : 'bg-transparent border-white/10 text-gray-400 hover:border-purple-500/50'

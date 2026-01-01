@@ -9,24 +9,24 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: "1",
     title: "EcoTech Branding Reveal",
-    category: "Corporate",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Placeholder links
+    category: "3D Product Showcase",
+    youtubeUrl: "https://www.youtube.com/embed/eptILeqGWsA",
     description: "A minimalist approach to high-tech sustainability branding.",
     viewCount: "12K"
   },
   {
     id: "2",
     title: "Neon Pulse UI Animation",
-    category: "UI Animation",
-    youtubeUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+    category: "Technical Explainer Motion Graphics",
+    youtubeUrl: "https://www.youtube.com/embed/wo0MP9BXjPM",
     description: "Exploration of micro-interactions for a cyberpunk fintech app.",
     viewCount: "8.5K"
   },
   {
     id: "3",
     title: "Summer Vibes Campaign",
-    category: "Social Media",
-    youtubeUrl: "https://www.youtube.com/watch?v=L_jWHffIx5E",
+    category: "Math Explainer",
+    youtubeUrl: "https://www.youtube.com/embed/JLDvYpxJb5I",
     description: "Vibrant motion patterns designed for high engagement on Instagram.",
     viewCount: "45K"
   },
@@ -34,7 +34,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: "4",
     title: "Quantum Physics Explained",
     category: "Explainer",
-    youtubeUrl: "https://www.youtube.com/watch?v=0_uWvE-wKyc",
+    youtubeUrl: "https://www.youtube.com/embed/DJB5LltEkRY",
     description: "Complex scientific concepts broken down into simple motion graphics.",
     viewCount: "120K"
   },
@@ -42,7 +42,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: "5",
     title: "Automotive Dynamics 2024",
     category: "Corporate",
-    youtubeUrl: "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
+    youtubeUrl: "https://www.youtube.com/embed/2Vv-BfVoq4g",
     description: "3D Motion launch video for the new EV series.",
     viewCount: "15.2K"
   },
@@ -50,7 +50,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: "6",
     title: "App Workflow Simulation",
     category: "UI Animation",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     description: "Detailed walkthrough of a productivity app interface.",
     viewCount: "6.7K"
   }
@@ -70,5 +70,5 @@ export const SOCIAL_LINKS = {
   vimeo: "https://vimeo.com",
   youtube: "https://youtube.com",
   linkedin: "https://linkedin.com",
-  email: "hello@alexrivera.design"
+  email: "hello@ishanrivera.design"
 };
