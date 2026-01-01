@@ -1,7 +1,7 @@
 
 import { PortfolioItem, Skill } from './types';
 
-export const DESIGNER_NAME = "ALEX RIVERA";
+export const DESIGNER_NAME = "ISHAN SRIVASTAVA";
 export const DESIGNER_ROLE = "Senior Motion Graphics Designer";
 export const DESIGNER_BIO = "I am a visual storyteller specializing in high-impact motion graphics and dynamic visual design. With over 8 years of experience, I help brands communicate complex ideas through fluid animation and meticulous design aesthetics.";
 
