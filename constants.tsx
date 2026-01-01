@@ -66,9 +66,9 @@ export const SKILLS: Skill[] = [
 ];
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com",
-  vimeo: "https://vimeo.com",
-  youtube: "https://youtube.com",
-  linkedin: "https://linkedin.com",
-  email: "hello@ishanrivera.design"
+  // instagram: "https://instagram.com",
+  // vimeo: "https://vimeo.com",
+  // youtube: "https://youtube.com",
+  linkedin: "https://www.linkedin.com/in/ishan-srivastava-a12bb0119/",
+  email: "ishan711997@gmail.com"
 };

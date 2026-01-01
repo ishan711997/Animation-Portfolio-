@@ -39,9 +39,9 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-heading font-bold text-white mb-6">Social Networks</h3>
               <div className="flex space-x-4">
                 {[
-                  { icon: Instagram, url: SOCIAL_LINKS.instagram },
+                  // { icon: Instagram, url: SOCIAL_LINKS.instagram },
                   { icon: Linkedin, url: SOCIAL_LINKS.linkedin },
-                  { icon: Github, url: "#" }, // Adding a generic one
+                  // { icon: Github, url: "#" }, // Adding a generic one
                 ].map((social, idx) => (
                   <a 
                     key={idx}
