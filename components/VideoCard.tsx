@@ -48,18 +48,12 @@ const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
             {item.category}
           </span>
         </div>
-        
-        <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-          <ArrowUpRight className="text-purple-400" size={24} />
-        </div>
       </div>
 
       <div className="p-10 flex-grow flex flex-col">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-2xl font-heading font-black text-white group-hover:text-purple-400 transition-colors tracking-tight leading-tight uppercase italic">
-            {item.title}
-          </h3>
-        </div>
+        <h3 className="text-2xl font-heading font-black text-white group-hover:text-purple-400 transition-colors tracking-tight leading-tight uppercase italic mb-4">
+          {item.title}
+        </h3>
         <p className="text-sm text-gray-500 line-clamp-3 font-light leading-relaxed mb-6 italic">
           {item.description}
         </p>
@@ -72,27 +66,21 @@ const VideoCard: React.FC<VideoCardProps> = ({ item }) => {
       {isPlaying && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/98 p-6 md:p-20 animate-in fade-in duration-500">
           <button 
-            onClick={(e) => { e.stopPropagation(); setIsPlaying(false); }}
+            onClick={() => setIsPlaying(false)}
             className="absolute top-10 right-10 text-white/40 hover:text-white transition-all p-3 glass rounded-full hover:rotate-90"
           >
             <X size={32} />
           </button>
           <div className="w-full max-w-7xl aspect-video bg-black rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(147,51,234,0.2)] border border-white/10">
-            {videoId ? (
-              <iframe
-                width="100%"
-                height="100%"
-                src={embedUrl}
-                title={item.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-gray-500 uppercase tracking-widest font-black">
-                Video Feed Unresponsive
-              </div>
-            )}
+            <iframe
+              width="100%"
+              height="100%"
+              src={embedUrl}
+              title={item.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       )}

@@ -50,12 +50,6 @@ const PortfolioGrid: React.FC = () => {
             <VideoCard key={item.id} item={item} />
           ))}
         </div>
-        
-        {filteredItems.length === 0 && (
-          <div className="py-40 text-center text-gray-600 uppercase tracking-widest font-black text-sm italic opacity-50">
-            No active projects for this category
-          </div>
-        )}
       </div>
     </section>
   );

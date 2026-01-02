@@ -5,7 +5,6 @@ import { DESIGNER_ROLE } from '../constants';
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden scanlines">
-      {/* Dynamic Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-purple-600/5 rounded-full blur-[160px] pointer-events-none opacity-40 animate-pulse" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
       
@@ -39,11 +38,6 @@ const Hero: React.FC = () => {
             Collaborate
           </Link>
         </div>
-      </div>
-      
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-4 opacity-30">
-        <span className="text-[9px] font-bold tracking-[0.5em] uppercase">Scroll to Explore</span>
-        <div className="w-px h-16 bg-gradient-to-b from-white to-transparent"></div>
       </div>
     </section>
   );
