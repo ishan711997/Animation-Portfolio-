@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -8,7 +7,6 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-// Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -17,7 +15,6 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Pages
 const HomePage = () => (
   <div className="animate-in fade-in duration-1000">
     <Hero />
@@ -28,19 +25,19 @@ const HomePage = () => (
 );
 
 const WorkPage = () => (
-  <div className="pt-32 animate-in slide-in-from-bottom-10 duration-700">
+  <div className="pt-32 min-h-screen animate-in slide-in-from-bottom-5 duration-700">
     <PortfolioGrid />
   </div>
 );
 
 const AboutPage = () => (
-  <div className="pt-32 animate-in slide-in-from-bottom-10 duration-700">
+  <div className="pt-32 min-h-screen animate-in slide-in-from-bottom-5 duration-700">
     <About />
   </div>
 );
 
 const ContactPage = () => (
-  <div className="pt-32 animate-in slide-in-from-bottom-10 duration-700">
+  <div className="pt-32 min-h-screen animate-in slide-in-from-bottom-5 duration-700">
     <Contact />
   </div>
 );
@@ -49,7 +46,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#050505]">
+      <div className="min-h-screen bg-[#050505] text-white">
         <Navbar />
         <main>
           <Routes>
