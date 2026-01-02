@@ -13,15 +13,27 @@
         --accent-purple: #9333ea;
         --accent-blue: #3b82f6;
       }
-      body {
+      
+      /* Force normal scrolling behavior and remove all snapping logic */
+      html, body {
         font-family: 'Inter', sans-serif;
         background-color: #050505;
         color: #ffffff;
         overflow-x: hidden;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        overscroll-behavior-y: none;
       }
+
+      * {
+        scroll-snap-align: none !important;
+        scroll-snap-stop: normal !important;
+      }
+
       .font-heading {
         font-family: 'Outfit', sans-serif;
       }
+
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -35,16 +47,19 @@
       ::-webkit-scrollbar-thumb:hover {
         background: var(--accent-purple);
       }
+
       .glass {
         background: rgba(10, 10, 10, 0.7);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
       }
+
       .text-gradient {
         background: linear-gradient(to right, #fff, #9333ea);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
       @keyframes float {
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-10px); }
@@ -52,6 +67,7 @@
       .animate-float {
         animation: float 4s ease-in-out infinite;
       }
+
       .scanlines::after {
         content: " ";
         display: block;

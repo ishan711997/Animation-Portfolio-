@@ -20,7 +20,7 @@ const PortfolioGrid: React.FC = () => {
     : PORTFOLIO_ITEMS.filter(item => item.category === activeFilter);
 
   return (
-    <section className="py-32 px-6 bg-[#050505]">
+    <section className="py-20 px-6 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-md">

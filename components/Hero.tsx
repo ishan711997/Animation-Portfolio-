@@ -4,11 +4,12 @@ import { DESIGNER_ROLE } from '../constants';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden scanlines">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-purple-600/5 rounded-full blur-[160px] pointer-events-none opacity-40 animate-pulse" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative min-h-[75vh] flex items-center justify-center overflow-x-hidden scanlines">
+      {/* Optimized Background Blurs */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-purple-600/5 rounded-full blur-[100px] pointer-events-none opacity-40 animate-pulse" />
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[80px] pointer-events-none" />
       
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto py-12">
         <div className="mb-10 inline-flex items-center space-x-3 py-1.5 px-5 border border-purple-500/20 bg-purple-500/5 rounded-full backdrop-blur-md animate-in fade-in slide-in-from-top-4 duration-1000">
           <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-ping" />
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-300">Available for Freelance Work</span>

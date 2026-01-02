@@ -16,7 +16,7 @@ const ScrollToTop = () => {
 };
 
 const HomePage = () => (
-  <div className="animate-in fade-in duration-1000">
+  <div className="flex flex-col w-full relative">
     <Hero />
     <PortfolioGrid />
     <About />
@@ -25,19 +25,19 @@ const HomePage = () => (
 );
 
 const WorkPage = () => (
-  <div className="pt-32 min-h-screen animate-in slide-in-from-bottom-5 duration-700">
+  <div className="pt-28">
     <PortfolioGrid />
   </div>
 );
 
 const AboutPage = () => (
-  <div className="pt-32 min-h-screen animate-in slide-in-from-bottom-5 duration-700">
+  <div className="pt-28">
     <About />
   </div>
 );
 
 const ContactPage = () => (
-  <div className="pt-32 min-h-screen animate-in slide-in-from-bottom-5 duration-700">
+  <div className="pt-28">
     <Contact />
   </div>
 );
@@ -46,9 +46,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#050505] text-white">
+      <div className="min-h-screen bg-[#050505] text-white flex flex-col overflow-x-hidden">
         <Navbar />
-        <main>
+        <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/work" element={<WorkPage />} />

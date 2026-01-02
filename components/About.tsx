@@ -3,7 +3,7 @@ import { DESIGNER_BIO, DESIGNER_ROLE, SKILLS } from '../constants';
 
 const About: React.FC = () => {
   return (
-    <section className="py-32 px-6 bg-[#0a0a0a]">
+    <section className="py-20 px-6 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
         <div className="w-full lg:w-1/2 relative">
           <div className="aspect-[4/5] relative overflow-hidden rounded-3xl border border-white/10 glass">
