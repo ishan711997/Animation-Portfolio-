@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { DESIGNER_NAME } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +15,18 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Work', path: '/work' },
@@ -24,45 +35,91 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass py-3 border-b border-white/5 shadow-2xl' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-heading font-extrabold tracking-tighter text-white hover:opacity-80 transition-opacity">
-          {DESIGNER_NAME}<span className="text-purple-500">.</span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-[11px] font-bold tracking-[0.25em] uppercase transition-all duration-300 hover:text-purple-400 ${location.pathname === link.path ? 'text-purple-500' : 'text-gray-400'}`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-white p-2 hover:bg-white/5 rounded-full transition-colors" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 glass z-40 flex flex-col items-center justify-center space-y-10 transition-all duration-500 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} md:hidden`}>
-        {navLinks.map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
+    <>
+      {/* Primary Navigation Bar */}
+      <nav 
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+          scrolled || isOpen ? 'glass py-4 border-b border-white/5' : 'bg-transparent py-8'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[102]">
+          <Link 
+            to="/" 
+            className="text-2xl font-heading font-extrabold tracking-tighter hover:opacity-80 transition-opacity"
             onClick={() => setIsOpen(false)}
-            className={`text-4xl font-heading font-extrabold uppercase transition-colors ${location.pathname === link.path ? 'text-purple-500' : 'text-white hover:text-purple-400'}`}
           >
-            {link.name}
+            <span className="text-gradient">ISHAN SRIVASTAVA</span><span className="text-purple-500">.</span>
           </Link>
-        ))}
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex space-x-12">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-[11px] font-black tracking-[0.3em] uppercase transition-all duration-300 hover:text-purple-400 ${
+                  location.pathname === link.path ? 'text-purple-500' : 'text-gray-400'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Toggle Button */}
+          <button 
+            className="md:hidden text-white p-2 hover:bg-white/10 rounded-full transition-all relative z-[103]" 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isOpen ? <X size={32} /> : <Menu size={32} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Full-Screen Overlay Menu */}
+      <div 
+        className={`fixed inset-0 z-[90] bg-[#050505]/98 backdrop-blur-2xl transition-all duration-500 md:hidden ${
+          isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-full pointer-events-none'
+        }`}
+      >
+        <div className="h-full w-full flex flex-col items-center justify-center p-8 space-y-10 overflow-y-auto">
+          {/* Centered Navigation Links */}
+          <div className="flex flex-col items-center space-y-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-5xl font-heading font-black uppercase transition-all duration-300 tracking-tighter italic ${
+                  location.pathname === link.path ? 'text-purple-500 scale-105' : 'text-white hover:text-purple-400'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          
+          {/* Mobile Footer Info */}
+          <div className="pt-12 border-t border-white/10 w-full max-w-[280px] text-center space-y-6">
+            <div className="space-y-2">
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500">Inquiry</p>
+              <a 
+                href="mailto:ishan711997@gmail.com" 
+                className="block text-white font-bold text-sm tracking-widest hover:text-purple-400 transition-colors"
+              >
+                ISHAN711997@GMAIL.COM
+              </a>
+            </div>
+            
+            <div className="flex justify-center items-center space-x-3">
+              <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+              <p className="text-[9px] font-black uppercase tracking-[0.3em] text-purple-300">Available Now</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 

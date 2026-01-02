@@ -11,12 +11,12 @@ const Hero: React.FC = () => {
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         <div className="mb-10 inline-flex items-center space-x-3 py-1.5 px-5 border border-purple-500/20 bg-purple-500/5 rounded-full backdrop-blur-md animate-in fade-in slide-in-from-top-4 duration-1000">
           <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-ping" />
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-300">Available for Global Commission</span>
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-300">Available for Freelance Work</span>
         </div>
         
-        <h1 className="text-7xl md:text-[11rem] font-heading font-black text-white mb-6 leading-[0.85] tracking-tighter uppercase italic select-none">
+        <h1 className="text-[4.2rem] md:text-[10.2rem] font-heading font-black text-white mb-6 leading-[0.95] tracking-tighter uppercase italic select-none overflow-visible">
           Design<br />
-          <span className="text-gradient">In Motion</span>
+          <span className="text-gradient pr-8 md:pr-12">In Motion</span>
         </h1>
         
         <p className="text-lg md:text-2xl text-gray-400 mb-14 max-w-2xl mx-auto font-light leading-relaxed tracking-wide opacity-70 italic">

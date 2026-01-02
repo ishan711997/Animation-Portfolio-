@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div className="space-y-16">
             <div>
-              <h3 className="text-xs font-black uppercase text-gray-600 tracking-[0.3em] mb-8">Main Office</h3>
+              <h3 className="text-xs font-black uppercase text-gray-600 tracking-[0.3em] mb-8">Contact</h3>
               <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-3xl md:text-5xl font-heading font-bold text-white hover:text-purple-500 transition-colors break-all">
                 {SOCIAL_LINKS.email}
               </a>
