@@ -44,13 +44,13 @@ const Navbar: React.FC = () => {
       {/* Primary Navigation Bar */}
       <nav 
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
-          scrolled || isOpen ? 'glass py-4 border-b border-white/5 shadow-2xl' : 'bg-transparent py-8'
+          scrolled || isOpen ? 'glass py-4 border-b border-white/5 shadow-2xl' : 'bg-transparent py-6 md:py-8'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[102]">
           <Link 
             to="/" 
-            className="text-2xl font-heading font-extrabold tracking-tighter hover:opacity-80 transition-opacity"
+            className="text-lg sm:text-xl md:text-2xl font-heading font-extrabold tracking-tighter hover:opacity-80 transition-opacity max-w-[75%] sm:max-w-none"
             onClick={() => setIsOpen(false)}
           >
             <span className="text-gradient">ISHAN SRIVASTAVA</span><span className="text-purple-500">.</span>
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close Menu" : "Open Menu"}
           >
-            {isOpen ? <X size={32} /> : <Menu size={32} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`text-5xl font-heading font-black uppercase transition-all duration-300 tracking-tighter italic ${
+                className={`text-4xl sm:text-5xl font-heading font-black uppercase transition-all duration-300 tracking-tighter italic ${
                   location.pathname === link.path ? 'text-purple-500 scale-105' : 'text-white hover:text-purple-400'
                 }`}
               >
