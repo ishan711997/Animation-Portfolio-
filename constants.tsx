@@ -33,7 +33,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: "v4",
     title: "Black Hole Dynamics Explainer",
     category: "Explainer",
-    youtubeUrl: "https://www.youtube.com/embed/DJB5LltEkRY",
+    youtubeUrl: "https://youtu.be/RjjHpIQMkYw?si=F_Qg_7IxER4Lszfc",
     description: "Translating complex gravitational physics into digestible visual narratives.",
     viewCount: "142K"
   },
@@ -41,15 +41,15 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: "v5",
     title: "Genesis EV Series Launch",
     category: "Corporate",
-    youtubeUrl: "https://www.youtube.com/embed/2Vv-BfVoq4g",
+    youtubeUrl: "https://youtu.be/g-Xo3mAqWn8?si=Kwx1-PsuX-_NG6Yu",
     description: "Cinematic CG reveal for the next generation of electric mobility.",
     viewCount: "31K"
   },
   {
     id: "v6",
     title: "Neural Network Visualization",
-    category: "Technical Explainer Motion Graphics",
-    youtubeUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    category: "Reel Editing",
+    youtubeUrl: "https://youtube.com/shorts/nTUi26bhOsA?feature=share",
     description: "Abstract representation of data flow and AI cognitive processes.",
     viewCount: "18.5K"
   }
