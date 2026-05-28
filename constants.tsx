@@ -47,12 +47,21 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "v6",
-    title: "Neural Network Visualization",
+    title: "AQI",
     category: "Video Editing",
-    youtubeUrl: "https://youtube.com/shorts/krlfEtrzUC0?feature=share",
+    youtubeUrl: "https://youtube.com/shorts/krlfEtrzUC0",
     description: "Removed green screen understood the script and accordingly edit the video.",
     viewCount: "18.5K"
+  },
+  {
+    id: "v7",
+    title: "Iran Israel war",
+    category: "2D / Motion Graphics",
+    youtubeUrl: "https://youtube.com/shorts/1BO02JKlDs8",
+    description: "Iran Israel war explained through motion graphics for client",
+    viewCount: "18.5K"
   }
+
 ];
 
 export const SKILLS: Skill[] = [
