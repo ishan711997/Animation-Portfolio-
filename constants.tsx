@@ -8,49 +8,49 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: "v1",
     title: "Project Obsidian: Brand Identity",
-    category: "3D Product Showcase",
+    category: "3D Animation",
     youtubeUrl: "https://www.youtube.com/embed/eptILeqGWsA",
     description: "An exploration of texture and light for a luxury tech brand's global launch.",
     viewCount: "24K"
   },
   {
     id: "v2",
-    title: "Quantum Ledger UI Interface",
-    category: "UI Animation",
+    title: "LLM Models",
+    category: "2D / Motion Graphics",
     youtubeUrl: "https://www.youtube.com/embed/wo0MP9BXjPM",
-    description: "Complex micro-interactions and dashboard visualizations for enterprise fintech.",
+    description: "Explaination of LLM (Large Language Models) though motion graphics.",
     viewCount: "9.2K"
   },
   {
     id: "v3",
     title: "The Math of Music: Kinetic Typography",
-    category: "Math Explainer",
+    category: "2D / Motion Graphics",
     youtubeUrl: "https://www.youtube.com/embed/JLDvYpxJb5I",
-    description: "Visualizing sound waves and geometric patterns through rhythmic motion graphics.",
+    description: "Explaination of math for the kids.",
     viewCount: "58K"
   },
   {
     id: "v4",
-    title: "Black Hole Dynamics Explainer",
-    category: "Explainer",
+    title: "Orpat Group",
+    category: "3D Animation",
     youtubeUrl: "https://youtu.be/RjjHpIQMkYw?si=F_Qg_7IxER4Lszfc",
-    description: "Translating complex gravitational physics into digestible visual narratives.",
+    description: "Orpat Group's smart fan 3d product advertisement.",
     viewCount: "142K"
   },
   {
     id: "v5",
-    title: "Genesis EV Series Launch",
-    category: "Corporate",
+    title: "Charmecy Milano",
+    category: "3D Animation",
     youtubeUrl: "https://youtu.be/g-Xo3mAqWn8?si=Kwx1-PsuX-_NG6Yu",
-    description: "Cinematic CG reveal for the next generation of electric mobility.",
+    description: "Charmecy Milano liquid foundaition product's ad",
     viewCount: "31K"
   },
   {
     id: "v6",
     title: "Neural Network Visualization",
-    category: "Reel Editing",
-    youtubeUrl: "https://youtube.com/shorts/nTUi26bhOsA?feature=share",
-    description: "Abstract representation of data flow and AI cognitive processes.",
+    category: "Video Editing",
+    youtubeUrl: "https://youtube.com/shorts/krlfEtrzUC0?feature=share",
+    description: "Removed green screen understood the script and accordingly edit the video.",
     viewCount: "18.5K"
   }
 ];

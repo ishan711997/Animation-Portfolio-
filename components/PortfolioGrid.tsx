@@ -8,11 +8,9 @@ const PortfolioGrid: React.FC = () => {
 
   const categories: Category[] = [
     'All', 
-    '3D Product Showcase', 
-    'Technical Explainer Motion Graphics',
-    'Math Explainer',
-    'Explainer', 
-    'UI Animation'
+    '3D Animation',
+    '2D / Motion Graphics',
+    'Video Editing',
   ];
 
   const filteredItems = activeFilter === 'All' 
